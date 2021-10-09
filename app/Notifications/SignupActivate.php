@@ -45,7 +45,7 @@ class SignupActivate extends Notification implements ShouldQueue
             ->salutation(__('mail.salutation'))
             ->subject(__('mail.activate_email.subject'))
             ->line(__('mail.activate_email.line_1'))
-            ->action(__('mail.activate_email.action'), 'https://loveus.pl/activate/'. $notifiable->user_activation_key);
+            ->action(__('mail.activate_email.action'), route('auth.verify_email', ['token' => $notifiable->user_activation_key]));
     }
 
     /**
