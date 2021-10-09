@@ -111,34 +111,34 @@ $(document).on('submit', 'form#ajax', function (e) {
         processData: false,
         data: new FormData(form[0]),
         success: function (data) {
+            if (form.attr('data-login')) {
+                if (data.access_token) {
+                    localStorage.setItem("access_token", data.access_token);
 
-            if (data.access_token) {
-                localStorage.setItem("access_token", data.access_token);
+
+                }
                 location.reload();
+            } else {
+
+                if (form.attr('datatable-reload')) {
+                    window.datatable.ajax.reload();
+                }
+
+                if (form.data('success')) errors({'success': form.data('success')}, $("#" + form.data('alert')))
+                else errors(data, $("#" + form.data('alert')));
+                if (form.data('disable')) $("input[type='submit']").attr("disabled", true);
+
+                if (!form.attr('data-left-data')) {
+                    $(':input', form)
+                        .not(':button, :submit, :reset, :hidden')
+                        .val('')
+                        .prop('checked', false)
+                        .prop('selected', false);
+
+
+                }
+                form.parents('.update').hide();
             }
-
-            if (form.data('import')) {
-                renderImport(data);
-            }
-
-            if (form.attr('datatable-reload')) {
-                window.datatable.ajax.reload();
-            }
-
-            if (form.data('success')) errors({'success': form.data('success')}, $("#" + form.data('alert')))
-            else errors(data, $("#" + form.data('alert')));
-            if (form.data('disable')) $("input[type='submit']").attr("disabled", true);
-
-            if (!form.attr('data-left-data')) {
-                $(':input', form)
-                    .not(':button, :submit, :reset, :hidden')
-                    .val('')
-                    .prop('checked', false)
-                    .prop('selected', false);
-
-
-            }
-            form.parents('.update').hide();
         },
         error: function (data) {
             form.data('error') ? errors({'error': form.data('error')}, $("#" + form.data('alert'))) : errors(data, $("#" + form.data('alert')));

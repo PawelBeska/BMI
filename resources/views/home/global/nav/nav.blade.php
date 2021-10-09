@@ -26,7 +26,7 @@
         <ul class="navbar-nav float-right">
             @auth()
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('logout') }}">@lang('messages.menu.logout')</a>
+                    <a class="nav-link" href="{{ route('home.logout') }}">@lang('messages.menu.logout')</a>
                 </li>
                 @endauth
 

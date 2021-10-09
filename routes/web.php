@@ -21,7 +21,7 @@ Route::middleware(['guest'])->group(function () {
     Route::view('/verify_email/{token}', 'auth.verify_email')->name('auth.verify_email');
 });
 
-Route::middleware(['auth:sanctum'])->group(function () {
+Route::middleware(['auth'])->group(function () {
     Route::name('home.')->group(function () {
         Route::get('/', [\App\Http\Controllers\IndexController::class, 'index'])->name('index');
 

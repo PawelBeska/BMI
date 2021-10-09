@@ -50,6 +50,7 @@ class AuthController extends Controller
         if (!Auth::user()->email_verified_at)
             return $this->errorResponse(__('auth.needs_email_confirmation'), ResponseAlias::HTTP_UNAUTHORIZED);
 
+
         return $this->successResponse([
             'user' => Auth::user(),
             'access_token' => Auth::user()->createToken('auth')->plainTextToken,
