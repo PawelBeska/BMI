@@ -21,17 +21,32 @@
             integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
             crossorigin="anonymous"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
+    <script src="{{URL::asset('assets/home/js/custom.js')}}"></script>
     <script>
+
         $.ajaxSetup({
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader('Authorization', 'Bearer ' + localStorage.getItem("access_token"));
+            },
+            statusCode: {
+                401: function (jqxhr, textStatus, errorThrown) {
+                    localStorage.clear();
+                    window.location.href = "{{route('api.auth.logout')}}";
+                },
+                403: function (jqxhr, textStatus, errorThrown) {
+                    errors({error: 'Nie masz do tego prawa!'}, $('#form-errors'));
+                }
+            },
             headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
             }
         });
+
     </script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
 
-    <script src="{{URL::asset('assets/home/js/custom.js')}}"></script>
+
 </head>
 <body>
     <div id="app">

@@ -4,10 +4,11 @@ return [
     'failed' => 'Błędny login lub hasło.',
     'password' => 'Podane hasło jest nieprawidłowe.',
     'throttle' => 'Za dużo nieudanych prób logowania. Proszę spróbować za :seconds sekund.',
-    'login_header'=>"Logowanie",
+    'login_header' => "Logowanie",
     'login_button' => "Zaloguj",
-    'register_header'=>"Rejestracja",
+    'register_header' => "Rejestracja",
     'register_button' => "Zarejestruj",
+    'needs_email_confirmation' => "Potwierdź swoje konto email",
     'fields' =>
         [
             'email' => "Email:",

@@ -10,7 +10,7 @@
 
                     <div class="card-body">
                         <form id="ajax" data-alert="form-errors"
-                              data-reload='true' method="POST" action="{{ route('api.auth.login') }}">
+                              data-reload="true" method="POST" action="{{ route('api.auth.login') }}">
                             @csrf
 
                             <div class="form-group row">
