@@ -6,5 +6,5 @@
 @endsection()
 
 @section('content')
-    @include('home.components.index.index')
+    @include('home.components.history.history')
 @endsection()

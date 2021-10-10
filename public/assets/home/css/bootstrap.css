@@ -66,7 +66,7 @@ body {
     font-size: 0.875rem;
     font-weight: 400;
     line-height: 1.5;
-    color: #55595c;
+    color: #444444;
     text-align: left;
     background-color: #fff;
 }
@@ -1668,7 +1668,7 @@ pre code {
 .table {
     width: 100%;
     margin-bottom: 1rem;
-    color: #55595c;
+    color: #303030;
 }
 
 .table th,

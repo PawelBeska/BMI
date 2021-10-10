@@ -25,7 +25,7 @@ Route::middleware(['auth'])->group(function () {
     Route::name('home.')->group(function () {
         Route::get('/', [\App\Http\Controllers\IndexController::class, 'index'])->name('index');
 
-        Route::get('/o-mnie', [\App\Http\Controllers\IndexController::class, 'index'])->name('about.index');
+        Route::get('/historia', [\App\Http\Controllers\IndexController::class, 'index'])->name('history.index');
 
         Route::any('/logout', function () {
             Auth::logout();

@@ -9,7 +9,11 @@
             @auth
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('home.index')}}/"
-                       redirect="true">{{__('messages.menu.home')}} </a>
+                       redirect="true">Kalkulator BMI </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('home.history.index')}}/"
+                       redirect="true">Historia wyników </a>
                 </li>
             @endauth
             @guest

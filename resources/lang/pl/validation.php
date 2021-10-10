@@ -125,7 +125,12 @@ return [
         'phone'=>'numer telefonu',
         'release_date' => 'data wydania',
         'password'=>'hasło',
-        'password_confirmation'=>'potwierdzenie hasła'
+        'password_confirmation'=>'potwierdzenie hasła',
+        'sex'=>"płeć",
+        'male'=>"płeć",
+        'height'=>'wzorst',
+        'weight'=>"waga",
+
 
     ],
 ];

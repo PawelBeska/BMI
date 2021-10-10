@@ -25,9 +25,18 @@ class BmiService
     /**
      * @param array $data
      * @param User $user
+     * @return Bmi
      */
-    public function addToHistory(array $data, User $user)
+    public function addToHistory(array $data, User $user): Bmi
     {
 
+        $this->bmi->height = $data['height'];
+        $this->bmi->weight = $data['weight'];
+        $this->bmi->male = $data['male'];
+        $this->bmi->age = $data['age'];
+        $this->bmi->user_id = $user->id;
+        $this->bmi->bmi = $data['weight'] / $data['height'] * $data['height'];
+        $this->bmi->save();
+        return $this->bmi;
     }
 }

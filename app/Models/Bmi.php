@@ -10,4 +10,5 @@ class Bmi extends Model
     use HasFactory;
 
 
+
 }

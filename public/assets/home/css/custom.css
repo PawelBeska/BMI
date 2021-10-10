@@ -9,7 +9,7 @@
     border-left-color: #00bc8c !important;
 }
 select{
-    color:white;
+    color: #1a1a1a;
 }
 .dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate{
     color:white;
@@ -23,10 +23,10 @@ label{
     margin-left: 16px!important;
     border: unset;
     border-radius: 5px;
-    background-color: #444;
+    background-color: #f7f7f7;
 }
 table.dataTable tbody tr {
-    background-color: #303030!important;
+    background-color: #f7f7f7!important;
 }
 .dataTables_wrapper .dataTables_paginate .paginate_button {
     color:white!important;
@@ -54,7 +54,7 @@ table.dataTable tbody tr {
 }
 .dataTables_wrapper .dataTables_length select {
     border: unset;
-    background-color: #444;
+    background-color: #f7f7f7;
     padding: 8px;
     margin-left: 2px;
     margin-right: 2px;

@@ -211,7 +211,6 @@ $(document).on('click', 'a.remove', function (e) {
         type: 'DELETE',
         data: {'_token': $('meta[name="csrf-token"]').attr('content')},
         success: function (data) {
-            errors(data, $('#form-errors'));
             window.datatable.ajax.reload();
         },
         error: function (data) {

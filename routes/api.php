@@ -27,4 +27,11 @@ Route::name('api.')->group(function () {
     Route::prefix('auth')->name('auth.')->middleware('auth:sanctum')->group(function () {
         Route::any('/logout', [AuthController::class, 'logout'])->name('logout');
     });
+    Route::middleware('auth:sanctum')->group(function () {
+
+        Route::post('/bmi', [\App\Http\Controllers\Api\BmiController::class, 'addToHistory'])->name('history.addToHistory');
+        Route::post('/historia', [\App\Http\Controllers\Api\BmiController::class, 'getHistoryData'])->name('history.getData');
+
+        Route::delete('/historia/{bmi}', [\App\Http\Controllers\Api\BmiController::class, 'destroy'])->name('history.destroy');
+    });
 });
