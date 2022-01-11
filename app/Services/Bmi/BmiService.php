@@ -35,7 +35,7 @@ class BmiService
         $this->bmi->male = $data['male'];
         $this->bmi->age = $data['age'];
         $this->bmi->user_id = $user->id;
-        $this->bmi->bmi = $data['weight'] / $data['height'] * $data['height'];
+        $this->bmi->bmi = $data['weight'] / ($data['height'] / 100 * $data['height']);
         $this->bmi->save();
         return $this->bmi;
     }
